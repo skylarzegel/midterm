@@ -33,5 +33,9 @@ public class Staff extends Employee {
 		
 		this.Title = Title;
 	}
+	public Staff(double salary){
+		
+	}
 
+	
 }

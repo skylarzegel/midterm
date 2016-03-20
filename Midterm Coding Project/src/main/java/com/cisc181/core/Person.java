@@ -1,7 +1,9 @@
 package com.cisc181.core;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -141,4 +143,21 @@ public abstract class Person implements java.io.Serializable {
 		return age;
 
 	}
+	public boolean TooOld() throws PersonException{
+		Calendar birthDate = Calendar.getInstance();
+		Calendar today = Calendar.getInstance();
+		birthDate.setTime(this.DOB);
+		
+		if (birthDate.get(Calendar.YEAR) < (today.get(Calendar.YEAR) - 100))
+			throw new PersonException();
+		else return false;
+		
+	}
 }
+
+	    
+	   
+	    
+	
+
+
